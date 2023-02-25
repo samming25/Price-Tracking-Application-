@@ -1,0 +1,52 @@
+body {
+    background-color: #c8e6c9;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#product-form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c8e6c9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #2e7d32;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"], input[type="url"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #2e7d32;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="submit"]:hover {
+    background-color: #1b5e20;
+}
+
+input:focus {
+    border: 2px solid #0288d1;
+    outline: none;
+}

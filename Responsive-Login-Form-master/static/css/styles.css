@@ -1,0 +1,126 @@
+body{
+ background: #A6BB8D;
+ margin: 0;
+ font-family: 'Raleway', sans-serif;
+ -webkit-font-smoothing: antialiased;
+  color:#212121;
+}
+.wrapper{
+  position: relative;
+  clear:both;
+  margin: 0 auto 75px auto;
+  width: 100%;
+  overflow: hidden;
+}
+.top{
+  background: #61876e;
+  height: 180px;
+  border-top: 20px solid #3c6255;
+}
+
+.top .title {
+  width: 700px;
+  margin: 38px auto 0 auto; 
+}
+
+.title h1 {
+  font-size:24px;
+  color:#FFF;
+  font-weight:500;
+}
+
+.content{
+    margin: -80px auto 100px;
+  padding-bottom: 20px;
+}
+
+.card{
+  position: relative;
+  background:#EAE7B1;
+  padding:50px;
+  width: 600px;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 4px rgba(100,100,100,.1);
+}
+
+.card h2 {
+  font-size:21px;
+  font-weight:500;
+}
+
+.card h2 a {
+  color:#CC0000;
+  text-decoration:none;
+}
+
+.card .text {
+  color:#212121;
+  margin-top:20px;
+  font-size:15px;
+  line-height:22px;
+}
+
+.add-product-button {
+
+	 display: block;
+       /* display: ; */
+       width: 200px;
+       height: 75px;
+       border-radius: 20px;
+       outline: none;
+       border: 4px double #cccc;
+       background-image: linear-gradient(to right, #f10c0c, #e0840b, #1a0403);
+       background-size: 200%;
+       font-size: 1.2rem;
+       color: #fff;
+       font-family: 'Poppins', sans-serif;
+       text-transform: uppercase;
+       /* margin: 1rem 0; */
+       margin: auto;
+       cursor: pointer;
+       transition: .5s;
+       display: inline-block;
+       text-align: center;
+       padding: 20px;
+       position: relative;
+       left: 37.5%;
+}
+
+
+ .update-btn{
+        left: 55%;
+        display: block;
+        width: 100px;
+        height: 25px;
+        border-radius: 5px;
+        outline: none;
+        border: 2px double #cccc;
+        background-size: 100%;
+        background-image: linear-gradient(to right, #2280af, #38d39f, #32be8f);
+
+    font-size: 1rem;
+    color: white;
+
+
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+
+    margin: auto;
+    cursor: pointer;
+    transition: .5s;
+    display: inline ;
+    text-align: center;
+    position: relative;
+    left: 60%;
+   }
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#3C6255;
+  color: white;
+  text-align: center;
+}

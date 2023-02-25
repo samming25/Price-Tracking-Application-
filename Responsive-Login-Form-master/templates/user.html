@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>{{usern}}</h1></div>
+    </div>
+
+    {% for product in all_products: %}
+    <div class="content">
+        <div class="card ">
+            <h2>{{ product['name'] }}</h2>
+            <p>url:{{ product['url'] }}</p>
+            <p>price:{{product['price']}}</p>
+            <a href="{{product['url']}}">visit the product</a>
+<!--            <button type="Update" class="update-btn">Update</button>-->
+        </div>
+
+    </div>
+    {% endfor %}
+
+
+  <button type="button" class="add-product-button" onclick="window.location.href='{{url_for('product_details')}}'">Add Product</button>
+
+</div>
+</body>
+<footer>
+    <p>footer</p>
+</footer>
+</html>

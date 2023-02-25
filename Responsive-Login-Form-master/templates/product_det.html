@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details Submission Form</title>
+    <link rel="stylesheet" type="text/css" href="static/css/prod1.css">
+</head>
+<body>
+
+    <div id="form-container">
+    <form id="product-form" action={{url_for('insert')}} method="POST">
+    <label for="product-name">Product Name:</label>
+    <input type="text" id="product-name" name="product_name" required>
+    <br>
+    <label for="product-url">Product URL:</label>
+    <input type="url" id="product-url" name="product_url" placeholder="https://example.com" required>
+    <br>
+    <label for="product-price">Desired Price:</label>
+    <input type="number" id="product-price" name="product_price" min="0" step="0.01" required>
+    <br>
+        <label for="product-price">Current Price:</label>
+    <input type="number"  name="price" min="0" step="0.01" required>
+    <br>
+    <input type="submit" value="Track">
+</form>
+            </div>
+<!--<script type="text/javascript" src="static/js/mai.js"></script>-->
+ </body>
+</html>

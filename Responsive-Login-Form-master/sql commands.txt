@@ -1,0 +1,158 @@
+1.  create a table for passwords and usernames
+2.  usernames must be email id 
+
+ to login: mysql -u root -p
+
+create login table:
+
+
+create table login (
+user_id  integer(5), 
+username varchar(20),
+password varchar(20),
+constraint pkl primary key(username)
+);
+
+// make userid unique
+
+insert into login values (1,'harshii19','123');
+insert into login values (2,'satyam','12345');
+insert into login values (3,'harshita','5050');
+
+
+insert into user values (1,'7004551331','harshitasinha0106@gmail.com');
+
+delete from user where user_id !=1;
+// add delete on cascade on user to product table
+// have to implement on delete cascade;
+
+delete from login where user_id !=1;
+
+ 
+insert into product values (1,1,'iphone','https://www.amazon.in/dp/B09G93RSZF?th=1',10000000);
+
+cur.execute("insert into user values (%s, %s, %s)",(userid,email,phone))
+
+
+CREATE TRIGGER delete_overpriced_items
+AFTER UPDATE ON products
+FOR EACH ROW
+BEGIN
+    IF (NEW.price > 100) THEN
+        DELETE FROM products WHERE id = NEW.id;
+    END IF;
+END;
+
+
+ALTER TABLE tracker
+ADD CONSTRAINT FK_Tracker
+FOREIGN KEY (Product_Id) REFERENCES product(Product_Id)
+ON DELETE CASCADE;
+
+ALTER TABLE tracker
+DROP FOREIGN KEY FK_Tracker;
+
+select * from product
+select * from website;
+select * from notification;
+
+
+
+
+DELIMITER $$
+CREATE PROCEDURE add_product(
+    IN product_name VARCHAR(255),
+    IN product_url VARCHAR(255),
+    IN product_price INT,
+    IN cur_price INT,
+    IN user_id INT,
+    IN product_id INT
+
+    
+)
+BEGIN
+    INSERT INTO product VALUES (product_id,user_id,product_name, product_url,cur_price);
+    INSERT INTO notification VALUES (user_id,product_id,product_price);
+    
+END$$
+DELIMITER ;
+
+
+
+
+import mysql.connector
+
+@app.route('/add_product', methods=['POST'])
+def add_product():
+    name = request.form['name']
+    description = request.form['description']
+    price = request.form['price']
+
+    conn = mysql.connector.connect(user='username', password='password', host='host', database='dbname')
+    cursor = conn.cursor()
+    cursor.callproc('add_product', (name, description, price))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return redirect(url_for('products'))
+
+
+
+    
+
+
+    create table user(
+    User_Id int,
+    Phone_Number varchar(255),
+    Email_Id varchar(255),
+    constraint PK_123 primary key(User_Id)
+    );
+
+    create table product (
+    Product_Id int,
+    User_Id int,
+    Product_Name varchar(255),
+    Product_Url varchar(255),
+    current_Price int,
+    constraint pk_234 primary key(Product_Id,User_Id),
+    constraint fk23 foreign key(User_Id) references user(User_Id) on delete cascade);
+
+
+
+    create table tracker (
+    Product_Id int,
+    Product_Url varchar(255),
+    Expected_Price int,
+    constraint pk234 primary key(Product_Id)
+    );
+
+    create table website (
+    Product_Id int,
+    Website_Name varchar(500),
+    constraint  pk2234 primary key(Product_Id)
+    );
+
+     create table notification (
+    User_Id int,
+    Product_Id int,
+    Expected_Price int,
+    constraint pk12 primary key(User_Id,Product_Id),
+    constraint fk123 foreign key(Product_Id) references product(Product_Id)
+    on delete cascade  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
